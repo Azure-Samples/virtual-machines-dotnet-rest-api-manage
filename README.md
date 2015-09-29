@@ -102,7 +102,7 @@ This operation returns configuration information, status, and system properties 
 
 This operation deletes the specified deployment.
 
-####Step 4: Please follow these demonstration steps below.
+###Step 4: Please follow these demonstration steps below.
 
 1.	Open the AddVirtualMachine.xml, fill your own value to this xml file.
 2.	Press Ctrl+F5 to show the console application.
