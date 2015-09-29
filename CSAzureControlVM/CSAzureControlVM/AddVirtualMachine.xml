@@ -1,0 +1,46 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/windowsazure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <!--Replace this property to avaliable value-->
+  <Name>name-of-deployment</Name>
+  <DeploymentSlot>Production</DeploymentSlot>
+    <!--Replace this property to avaliable value-->
+  <Label>identifier-of-deployment</Label>
+  <RoleList>
+    <Role>
+      <!--Replace this property to avaliable value-->
+      <RoleName>name-of-the-virtual-machine</RoleName>
+      <RoleType>PersistentVMRole</RoleType>
+      <ConfigurationSets>
+        <ConfigurationSet i:type="WindowsProvisioningConfigurationSet">
+          <ConfigurationSetType>WindowsProvisioningConfiguration</ConfigurationSetType>
+          <!--Replace this property to avaliable value-->
+          <ComputerName>name-of-computer</ComputerName>
+          <!--Replace this property to avaliable value-->
+          <AdminPassword>administrator-password</AdminPassword>
+          <EnableAutomaticUpdates>true</EnableAutomaticUpdates>
+          <!--Replace this property to avaliable value-->
+          <AdminUsername>name-of-administrator-account</AdminUsername>
+        </ConfigurationSet>
+        <ConfigurationSet i:type="NetworkConfigurationSet">
+          <ConfigurationSetType>NetworkConfiguration</ConfigurationSetType>
+          <InputEndpoints>
+            <InputEndpoint>
+              <LocalPort>5976</LocalPort>
+              <Name>PowerShell</Name>
+              <Port>5976</Port>
+              <Protocol>tcp</Protocol>
+              <EnableDirectServerReturn>false</EnableDirectServerReturn>
+            </InputEndpoint>
+          </InputEndpoints>
+        </ConfigurationSet>
+      </ConfigurationSets>
+      <DataVirtualHardDisks/>
+      <OSVirtualHardDisk>
+        <!--Replace this property to avaliable value-->
+        <DiskName>name-of-disk</DiskName>
+        <!--Replace these two properties to avaliable value-->
+        <MediaLink>https://portalvhdswslbyw3kdv748.blob.core.windows.net/vhds/vhdtest</MediaLink>       
+        <SourceImageName>a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-20150916-en.us-127GB.vhd</SourceImageName>
+      </OSVirtualHardDisk>
+    </Role>
+  </RoleList>
+</Deployment>
