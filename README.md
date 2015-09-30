@@ -1,10 +1,11 @@
 ---
-services: virtual machines
+services: virtual-machines
 platforms: dotnet
 author: xiaopingpingcn
 ---
 
-# virtual-machines-donet-rest-api-manage
+# Mange Azure Virtual Machines using REST API
+
 This sample demonstrates a how to mange Azure Virtual Machines using REST API.
  To operate Azure Virtual Machines, using the Azure PowerShell isn't the only way. We also can use management service API to achieve this target. We can use GET/POST/DELETE requests to operate an Azure Virtual Machine.
 
@@ -66,33 +67,32 @@ This operation creates a deployment and then creates a Virtual Machine in the de
 
 Some code snippets:
 ```C#
-       static HttpWebRequest AddVirtualMachine()
-       {
-           //For more details about how to add virtual machine please refer to:
-           //http://msdn.microsoft.com/en-us/library/windowsazure/jj157194.aspx
-           HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri("https://management.core.windows.net/" + SubscriptionID
-           + "/services/hostedservices/" + ServiceName + "/deployments" ));
+static HttpWebRequest AddVirtualMachine()
+{
+    //For more details about how to add virtual machine please refer to:
+    //http://msdn.microsoft.com/en-us/library/windowsazure/jj157194.aspx
+    HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri("https://management.core.windows.net/" + SubscriptionID
+    + "/services/hostedservices/" + ServiceName + "/deployments" ));
 
-           request.Method = "POST";
-           request.ClientCertificates.Add(Certificate);
-           request.ContentType = "application/xml";
-           request.Headers.Add("x-ms-version", "2015-04-01");
+    request.Method = "POST";
+    request.ClientCertificates.Add(Certificate);
+    request.ContentType = "application/xml";
+    request.Headers.Add("x-ms-version", "2015-04-01");
 
-           // Add body to the request
-           XmlDocument xmlDoc = new XmlDocument();
-           xmlDoc.Load("..\\..\\AddVirtualMachine.xml");
+    // Add body to the request
+    XmlDocument xmlDoc = new XmlDocument();
+    xmlDoc.Load("..\\..\\AddVirtualMachine.xml");
 
-           Stream requestStream = request.GetRequestStream();
-           StreamWriter streamWriter = new StreamWriter(requestStream, System.Text.UTF8Encoding.UTF8);
-           xmlDoc.Save(streamWriter);
+    Stream requestStream = request.GetRequestStream();
+    StreamWriter streamWriter = new StreamWriter(requestStream, System.Text.UTF8Encoding.UTF8);
+    xmlDoc.Save(streamWriter);
 
-           streamWriter.Close();
-           requestStream.Close();
+    streamWriter.Close();
+    requestStream.Close();
 
-           return request;
+    return request;
 
-       }
-
+}
 ```
 2.How to get an Azure Virtual Machine Deployment via RESTAPI.
 
