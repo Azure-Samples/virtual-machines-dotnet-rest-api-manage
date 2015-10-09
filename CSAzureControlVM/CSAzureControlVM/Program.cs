@@ -3,9 +3,9 @@
 * Project:     CSAzureControlVM
 * Copyright (c) Microsoft Corporation.
 * 
-* To operate widnows Azure Iaas virtual machine, using the azure power shell 
+* To operate Azure Virtual Machines, using the azure power shell 
 * isn't the only way. We also can use mangement service API to achieve this target.
-* This sample will use GET/POST/DELETE requests to operate the virtual machine.
+* This sample will use GET/POST/DELETE requests to operate an Azure Virtual Machine.
 * 
 * This source is subject to the Microsoft Public License.
 * See http://www.microsoft.com/en-us/openness/licenses.aspx#MPL
@@ -146,14 +146,14 @@ namespace CSAzureControlVM
         }
 
         /// <summary>
-        /// Add a windows server 2008 R2 virtual machine.
+        /// Add a windows server 2012 R2 virtual machine.
         /// Need to set the AddVirtualMachine.xml file first
         /// </summary>
         /// <returns></returns>
         static HttpWebRequest AddVirtualMachine()
         {
             //For more details about how to add virtual machine please refer to:
-            //http://msdn.microsoft.com/en-us/library/windowsazure/jj157194.aspx
+            //https://msdn.microsoft.com/en-us/library/azure/jj157194.aspx
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri("https://management.core.windows.net/" + SubscriptionID
             + "/services/hostedservices/" + ServiceName + "/deployments"));
 
