@@ -12,7 +12,7 @@ This sample demonstrates a how to mange Azure Virtual Machines using REST API.
 To run this sample you will need:
 
 - Visual Studio 2015
-- An Azure subscription (a free trial is sufficient)
+- An Azure subscription 
 
 ###Step 1:  Clone or download this repository.
 From your shell or command line:
