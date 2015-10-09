@@ -17,7 +17,7 @@ To run this sample you will need:
 ###Step 1:  Clone or download this repository.
 From your shell or command line:
 
-`git clone https://github.com/Azure-Samplesvirtual-machines-dotnet-rest-api-manage.git`
+`git clone https://github.com/Azure-Samples/virtual-machines-dotnet-rest-api-manage.git`
 
 ###Step 2: Create a cloud service.
 The cloud service to which you want to deploy the Virtual Machine.If you already have a cloud service in your Azure, you can skip to the next step. If you create a cloud service, you can create it by using the Management Portal, by using Create Cloud Service, or by using the New-AzureService cmdlet. 
